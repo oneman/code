@@ -1,0 +1,151 @@
+execve("/usr/bin/ping", ["ping", "-c4", "::1"], 0x7fffda3a10d0 /* 56 vars */) = 0
+faccessat(AT_FDCWD, "/etc/suid-debug", F_OK) = -1 ENOENT (No such file or directory)
+brk(NULL)                               = 0x555580afc000
+fcntl(0, F_GETFD)                       = 0
+fcntl(1, F_GETFD)                       = 0
+fcntl(2, F_GETFD)                       = 0
+faccessat(AT_FDCWD, "/etc/suid-debug", F_OK) = -1 ENOENT (No such file or directory)
+faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=97443, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 97443, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fffa07f4000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libcap.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\200v\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=67704, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 196696, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fffa07c0000
+mmap(0x7fffa07c0000, 131160, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0x7fffa07c0000
+munmap(0x7fffa07e4000, 49240)           = 0
+mprotect(0x7fffa07cc000, 65536, PROT_NONE) = 0
+mmap(0x7fffa07dc000, 32768, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xc000) = 0x7fffa07dc000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libidn2.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=198664, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 327784, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fffa076c000
+mmap(0x7fffa0770000, 262248, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0x7fffa0770000
+munmap(0x7fffa076c000, 16384)           = 0
+munmap(0x7fffa07b4000, 32872)           = 0
+mprotect(0x7fffa07a0000, 49152, PROT_NONE) = 0
+mmap(0x7fffa07ac000, 32768, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2c000) = 0x7fffa07ac000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0000y\2\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1651408, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 1826912, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fffa05b0000
+mmap(0x7fffa05b0000, 1761376, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0x7fffa05b0000
+munmap(0x7fffa0760000, 57440)           = 0
+mprotect(0x7fffa0738000, 81920, PROT_NONE) = 0
+mmap(0x7fffa074c000, 32768, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18c000) = 0x7fffa074c000
+mmap(0x7fffa0754000, 41056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fffa0754000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libunistring.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1771448, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 1902760, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fffa03dc000
+mmap(0x7fffa03e0000, 1837224, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0x7fffa03e0000
+munmap(0x7fffa03dc000, 16384)           = 0
+munmap(0x7fffa05a4000, 34984)           = 0
+mprotect(0x7fffa058c000, 65536, PROT_NONE) = 0
+mmap(0x7fffa059c000, 32768, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ac000) = 0x7fffa059c000
+close(3)                                = 0
+mmap(NULL, 32768, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fffa0834000
+set_tid_address(0x7fffa0834510)         = 3816955
+set_robust_list(0x7fffa0834520, 24)     = 0
+rseq(0x7fffa0834b60, 0x20, 0, 0xd428bc00) = 0
+mprotect(0x7fffa074c000, 16384, PROT_READ) = 0
+mprotect(0x7fffa059c000, 16384, PROT_READ) = 0
+mprotect(0x7fffa07ac000, 16384, PROT_READ) = 0
+mprotect(0x7fffa07dc000, 16384, PROT_READ) = 0
+mprotect(0x55557170c000, 16384, PROT_READ) = 0
+mprotect(0x7fffa0848000, 16384, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fffa07f4000, 97443)           = 0
+prctl(PR_CAPBSET_READ, CAP_MAC_OVERRIDE) = 1
+prctl(PR_CAPBSET_READ, 0x30 /* CAP_??? */) = -1 EINVAL (Invalid argument)
+prctl(PR_CAPBSET_READ, CAP_CHECKPOINT_RESTORE) = 1
+prctl(PR_CAPBSET_READ, 0x2c /* CAP_??? */) = -1 EINVAL (Invalid argument)
+prctl(PR_CAPBSET_READ, 0x2a /* CAP_??? */) = -1 EINVAL (Invalid argument)
+prctl(PR_CAPBSET_READ, 0x29 /* CAP_??? */) = -1 EINVAL (Invalid argument)
+getrandom("\xc6\xf8\x64\x62\xec\x19\x6d\x35", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x555580afc000
+brk(0x555580b20000)                     = 0x555580b20000
+capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, NULL) = 0
+capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, {effective=0, permitted=0, inheritable=0}) = 0
+capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, NULL) = 0
+capset({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, {effective=0, permitted=0, inheritable=0}) = 0
+prctl(PR_SET_KEEPCAPS, 1)               = 0
+getuid()                                = 1000
+setuid(1000)                            = 0
+prctl(PR_SET_KEEPCAPS, 0)               = 0
+getuid()                                = 1000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fffa00f4000
+close(3)                                = 0
+capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, NULL) = 0
+capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, {effective=0, permitted=0, inheritable=0}) = 0
+socket(AF_INET, SOCK_DGRAM, IPPROTO_ICMP) = 3
+socket(AF_INET6, SOCK_DGRAM, IPPROTO_ICMPV6) = 4
+capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, NULL) = 0
+capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, {effective=0, permitted=0, inheritable=0}) = 0
+openat(AT_FDCWD, "/usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY) = 5
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=27028, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 27028, PROT_READ, MAP_SHARED, 5, 0) = 0x7fffa0804000
+close(5)                                = 0
+futex(0x7fffa075188c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+socket(AF_INET6, SOCK_DGRAM, IPPROTO_IP) = 5
+connect(5, {sa_family=AF_INET6, sin6_port=htons(1025), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, 28) = 0
+getsockname(5, {sa_family=AF_INET6, sin6_port=htons(57045), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, [28]) = 0
+close(5)                                = 0
+setsockopt(4, SOL_IPV6, IPV6_RECVERR, [1], 4) = 0
+setsockopt(4, SOL_SOCKET, SO_SNDBUF, [344], 4) = 0
+setsockopt(4, SOL_SOCKET, SO_RCVBUF, [65536], 4) = 0
+getsockopt(4, SOL_SOCKET, SO_RCVBUF, [131072], [4]) = 0
+setsockopt(4, SOL_IPV6, IPV6_RECVHOPLIMIT, [1], 4) = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x7), ...}, AT_EMPTY_PATH) = 0
+write(1, "PING ::1(::1) 56 data bytes\n", 28PING ::1(::1) 56 data bytes
+) = 28
+setsockopt(4, SOL_SOCKET, SO_TIMESTAMP_OLD, [1], 4) = 0
+setsockopt(4, SOL_SOCKET, SO_SNDTIMEO_OLD, "\1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 16) = 0
+setsockopt(4, SOL_SOCKET, SO_RCVTIMEO_OLD, "\1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0", 16) = 0
+rt_sigaction(SIGINT, {sa_handler=0x5555716f6310, sa_mask=[], sa_flags=SA_RESTART}, NULL, 8) = 0
+rt_sigaction(SIGALRM, {sa_handler=0x5555716f6310, sa_mask=[], sa_flags=SA_RESTART}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=0x5555716f62f0, sa_mask=[], sa_flags=SA_RESTART}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+ioctl(1, TCGETS, {c_iflag=ICRNL|IXON|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+ioctl(1, TIOCGWINSZ, {ws_row=23, ws_col=91, ws_xpixel=0, ws_ypixel=0}) = 0
+capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, NULL) = 0
+capset({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, {effective=0, permitted=0, inheritable=0}) = 0
+sendto(4, "\200\0\0\0\377\377\0\1\265b\217g\0\0\0\0<\327\7\0\0\0\0\0\20\21\22\23\24\25\26\27"..., 64, 0, {sa_family=AF_INET6, sin6_port=htons(58), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, 28) = 64
+recvmsg(4, {msg_name={sa_family=AF_INET6, sin6_port=htons(0), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, msg_namelen=128 => 28, msg_iov=[{iov_base="\201\0006\373\0\23\0\1\265b\217g\0\0\0\0<\327\7\0\0\0\0\0\20\21\22\23\24\25\26\27"..., iov_len=4208}], msg_iovlen=1, msg_control=[{cmsg_len=32, cmsg_level=SOL_SOCKET, cmsg_type=SO_TIMESTAMP_OLD, cmsg_data={tv_sec=1737450165, tv_usec=513984}}, {cmsg_len=20, cmsg_level=SOL_IPV6, cmsg_type=0x34}], msg_controllen=56, msg_flags=0}, 0) = 64
+write(1, "64 bytes from ::1: icmp_seq=1 tt"..., 5164 bytes from ::1: icmp_seq=1 ttl=64 time=0.132 ms
+) = 51
+recvmsg(4, {msg_namelen=128}, 0)        = -1 EAGAIN (Resource temporarily unavailable)
+sendto(4, "\200\0\0\0\377\377\0\2\266b\217g\0\0\0\0%D\10\0\0\0\0\0\20\21\22\23\24\25\26\27"..., 64, MSG_CONFIRM, {sa_family=AF_INET6, sin6_port=htons(58), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, 28) = 64
+recvmsg(4, {msg_name={sa_family=AF_INET6, sin6_port=htons(0), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, msg_namelen=128 => 28, msg_iov=[{iov_base="\201\0L\215\0\23\0\2\266b\217g\0\0\0\0%D\10\0\0\0\0\0\20\21\22\23\24\25\26\27"..., iov_len=4208}], msg_iovlen=1, msg_control=[{cmsg_len=32, cmsg_level=SOL_SOCKET, cmsg_type=SO_TIMESTAMP_OLD, cmsg_data={tv_sec=1737450166, tv_usec=541852}}, {cmsg_len=20, cmsg_level=SOL_IPV6, cmsg_type=0x34}], msg_controllen=56, msg_flags=0}, 0) = 64
+write(1, "64 bytes from ::1: icmp_seq=2 tt"..., 5164 bytes from ::1: icmp_seq=2 ttl=64 time=0.119 ms
+) = 51
+recvmsg(4, {msg_namelen=128}, 0)        = -1 EAGAIN (Resource temporarily unavailable)
+sendto(4, "\200\0\0\0\377\377\0\3\267b\217g\0\0\0\0\344\241\10\0\0\0\0\0\20\21\22\23\24\25\26\27"..., 64, MSG_CONFIRM, {sa_family=AF_INET6, sin6_port=htons(58), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, 28) = 64
+recvmsg(4, {msg_name={sa_family=AF_INET6, sin6_port=htons(0), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, msg_namelen=128 => 28, msg_iov=[{iov_base="\201\0\214.\0\23\0\3\267b\217g\0\0\0\0\344\241\10\0\0\0\0\0\20\21\22\23\24\25\26\27"..., iov_len=4208}], msg_iovlen=1, msg_control=[{cmsg_len=32, cmsg_level=SOL_SOCKET, cmsg_type=SO_TIMESTAMP_OLD, cmsg_data={tv_sec=1737450167, tv_usec=565850}}, {cmsg_len=20, cmsg_level=SOL_IPV6, cmsg_type=0x34}], msg_controllen=56, msg_flags=0}, 0) = 64
+write(1, "64 bytes from ::1: icmp_seq=3 tt"..., 5164 bytes from ::1: icmp_seq=3 ttl=64 time=0.118 ms
+) = 51
+recvmsg(4, {msg_namelen=128}, 0)        = -1 EAGAIN (Resource temporarily unavailable)
+sendto(4, "\200\0\0\0\377\377\0\4\270b\217g\0\0\0\0\241\377\10\0\0\0\0\0\20\21\22\23\24\25\26\27"..., 64, MSG_CONFIRM, {sa_family=AF_INET6, sin6_port=htons(58), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, 28) = 64
+setitimer(ITIMER_REAL, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=1, tv_usec=0}}, NULL) = 0
+recvmsg(4, {msg_name={sa_family=AF_INET6, sin6_port=htons(0), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, msg_namelen=128 => 28, msg_iov=[{iov_base="\201\0\315\317\0\23\0\4\270b\217g\0\0\0\0\241\377\10\0\0\0\0\0\20\21\22\23\24\25\26\27"..., iov_len=4208}], msg_iovlen=1, msg_control=[{cmsg_len=32, cmsg_level=SOL_SOCKET, cmsg_type=SO_TIMESTAMP_OLD, cmsg_data={tv_sec=1737450168, tv_usec=589898}}, {cmsg_len=20, cmsg_level=SOL_IPV6, cmsg_type=0x34}], msg_controllen=56, msg_flags=0}, 0) = 64
+write(1, "64 bytes from ::1: icmp_seq=4 tt"..., 5164 bytes from ::1: icmp_seq=4 ttl=64 time=0.169 ms
+) = 51
+write(1, "\n", 1
+)                       = 1
+write(1, "--- ::1 ping statistics ---\n", 28--- ::1 ping statistics ---
+) = 28
+write(1, "4 packets transmitted, 4 receive"..., 634 packets transmitted, 4 received, 0% packet loss, time 3076ms
+) = 63
+write(1, "rtt min/avg/max/mdev = 0.118/0.1"..., 50rtt min/avg/max/mdev = 0.118/0.134/0.169/0.020 ms
+) = 50
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
