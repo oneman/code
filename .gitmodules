@@ -1,3 +1,6 @@
 [submodule "opus"]
 	path = o
 	url = https://gitlab.xiph.org/xiph/opus
+[submodule "daala"]
+	path = d
+	url = https://gitlab.xiph.org/xiph/daala
