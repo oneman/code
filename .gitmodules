@@ -4,3 +4,6 @@
 [submodule "daala"]
 	path = d
 	url = https://gitlab.xiph.org/xiph/daala
+[submodule "q"]
+	path = q
+	url = https://github.com/id-Software/Quake
