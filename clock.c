@@ -101,8 +101,6 @@ DRDDDDMUMHMUMUMUHMUHMSSSSSS
 
 RDDDDD UUUUU HHH MMMMMM SSSSSS
 
-*/
- 
 #include <stdio.h>
 #include <time.h>
 #include <sys/random.h>
@@ -134,9 +132,19 @@ int main(int argc, char *argv[]) {
         &time_remain)) return 2;
   }
   return 1;
+}*/
+#include <stdio.h>
+/*
+ * OK so lets implement this 4 byte 32 bit thing holding a 26bit thing.
+ */
+
+int faclock() {
+  static int bs = 1;
+  return ++bs;
 }
 
-
-
-
-
+int main() {
+  char pass = 'a';
+  for(;pass != 'c';) { if (faclock() == 26) pass++; }
+  return 0;
+}

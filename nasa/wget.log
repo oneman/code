@@ -1,0 +1,11 @@
+--2025-01-24 16:02:57--  https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+Resolving nssdc.gsfc.nasa.gov (nssdc.gsfc.nasa.gov)... 2001:4d0:2418:128::124, 169.154.128.124
+Connecting to nssdc.gsfc.nasa.gov (nssdc.gsfc.nasa.gov)|2001:4d0:2418:128::124|:443... failed: No route to host.
+Connecting to nssdc.gsfc.nasa.gov (nssdc.gsfc.nasa.gov)|169.154.128.124|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘earthfact.html’
+
+earthfact.html                   [ <=>                                           ]   5.36K  --.-KB/s    in 0s      
+
+2025-01-24 16:02:59 (114 MB/s) - ‘earthfact.html’ saved [5491]

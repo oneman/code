@@ -1,0 +1,11 @@
+*#./test.sh 
+Running Super Set Up ...
+1737755601
+Running gcc ...
+Done with gcc
+Just a second ...
+OK
+Clock ran
+1737755612
+Script Complete.
+*#
