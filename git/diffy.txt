@@ -1,0 +1,7 @@
+*#ls -aR bear/|wc
+     65      56     552
+*#ls -aR bare256/|wc
+     65      56     582
+*#ls -aR sha256/|wc
+     70      60     641
+*#
