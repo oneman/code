@@ -245,14 +245,54 @@ int yar() {
   return 67108864/60/60/24+1000;
 }
 
+void memcopy(char *d, char *s, int sz) {
+  for (int i = 0; i < sz; i++) {
+    d[i] = s[i];
+  }
+}
+
+typedef struct {
+  char letters[26];
+} word;
 
 int main() {
 /*char abc[1 * 2 * (3 + 10101010101010101010)] = "abcdefghijklmnopqrstuvwxyz";*/
   char abc[1 * 2 * (3 + 10)] = "abcdefghijklmnopqrstuvwxyz";
   char line[2 * 2 * 2 * 10];
 
-  sprintf(line, "/*%26s*/", abc);
+  printf("%zu\n", sizeof(word));
+  printf("%zu\n", sizeof(long));
+  printf("%zu\n", sizeof(short));
+  printf("%zu\n", sizeof(abc));
+  printf("%zu\n", sizeof(char));
+  printf("%zu\n", sizeof(unsigned char));
+  printf("%zu\n", sizeof(int));
+  printf("%zu\n", sizeof(unsigned int));
+  printf("%zu\n", sizeof(long));
+
+  printf("%zu\n", sizeof(abc));
+
+  sprintf(line, "/*%26d*/", 1);
   printf("%30s]\n", line);
+
+/*
+ *
+abcdefghijklmnopqrstuvwxyz
+ *
+ */
+
+
+
+  char bong[80] = "123";
+  char cnut[26] = "abc";
+  char lime[81] = "OK";
+
+  sprintf(bong, "%2s", cnut);
+  sprintf(lime, "%2s\n", bong);
+  printf("\n\n[\n%2s\n]\n\n", lime);
+
+
+
   return 1;
   /*printf("%d\n", yar());*/
   for (int n = 1;n < 27; n++) {
