@@ -254,9 +254,11 @@ void memcopy(char *d, char *s, int sz) {
 typedef struct {
   char letters[26];
 } word;
-
+/*
 int main() {
-/*char abc[1 * 2 * (3 + 10101010101010101010)] = "abcdefghijklmnopqrstuvwxyz";*/
+  printf("%d\n", BUFSIZ);
+  return 0;
+*char abc[1 * 2 * (3 + 10101010101010101010)] = "abcdefghijklmnopqrstuvwxyz";*
   char abc[1 * 2 * (3 + 10)] = "abcdefghijklmnopqrstuvwxyz";
   char line[2 * 2 * 2 * 10];
 
@@ -272,16 +274,7 @@ int main() {
 
   printf("%zu\n", sizeof(abc));
 
-  sprintf(line, "/*%26d*/", 1);
   printf("%30s]\n", line);
-
-/*
- *
-abcdefghijklmnopqrstuvwxyz
- *
- */
-
-
 
   char bong[80] = "123";
   char cnut[26] = "abc";
@@ -291,12 +284,8 @@ abcdefghijklmnopqrstuvwxyz
   sprintf(lime, "%2s\n", bong);
   printf("\n\n[\n%2s\n]\n\n", lime);
 
-
-
   return 1;
-  /*printf("%d\n", yar());*/
   for (int n = 1;n < 27; n++) {
-    /*printf("%02d: ", n);*/
     for (int b = 1; b < 27; b++) {
       if (b == 27 - n) {
         printf("1");
@@ -306,5 +295,64 @@ abcdefghijklmnopqrstuvwxyz
     }
     printf("\n");
   }
+  return 0;
+}
+*/
+
+/*
+ *
+ */
+
+/* int radmode4 = 16265177; */
+
+int packclack(int clack) {
+  if (clack < 0) return -1;
+  if (clack > 67108863) return -6;
+  int mode = 0;
+  if ((clack % 1000000) == 0) {
+    printf("clack %d\n", clack);
+  }
+  if ((clack == 2601) || (clack == 65347568 - 1)) {
+    /* 001 100 */
+    mode = 1;
+    int clacket = 0b00100000000000000000000000000100;
+    printf("clack: %d\nclacket: %d\n", clack, clacket);
+  } else {
+    if ((clack % (2601 - 8) == 0) || (clack % (2601 + 8) == 0)) {
+      /* 010 010 */
+      mode = 2;
+    } else {
+      if ((clack % 2) == 1) {
+        /* 100 001 */
+        mode = 3;
+      } else {
+        if ((clack % 2) == 0) {
+          /* 110 011 */
+          mode = 4;
+        }
+      }
+    }
+  }
+  if ((clack % 1000000) == 0) {
+    printf("clack %8d mode %d\n", clack, mode);
+  }
+  if ((mode > 0) && (mode < 5)) return mode;
+  return -2;
+}
+
+int main() {
+  int nmode1 = 0;
+  int nmode2 = 0;
+  int nmode3 = 0;
+  int nmode4 = 0;
+  for (int i = 0; i < 67108864; i++) {
+    if (packclack(i) < 1) return 1;
+    if (packclack(i) > 4) return 1;
+    if (packclack(i) == 1) nmode1++;
+    if (packclack(i) == 2) nmode2++;
+    if (packclack(i) == 3) nmode3++;
+    if (packclack(i) == 4) nmode4++;
+  }
+  printf("Results: %8d %8d %8d %8d\n", nmode1, nmode2, nmode3, nmode4);
   return 0;
 }
