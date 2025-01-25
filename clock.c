@@ -221,7 +221,7 @@ int main() {
 /*
  *
  */
-
+/*
 int main() {
   int r = 2 * 13;
   int c = 8 * 10;
@@ -233,5 +233,16 @@ int main() {
       printf("n:%d\n", n);
     }
   }
+  return 0;
+}
+*/
+
+/*
+ *
+ */
+
+int main() {
+  int arev = 67108864/60/60/24+1000;
+  printf("%d\n", arev);
   return 0;
 }
