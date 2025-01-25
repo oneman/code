@@ -1,5 +1,6 @@
 #!/bin/sh
 
+git log | grep "rawdod" | wc -l > VERSION
 gcc -Werror clock.c
 ./a.out > clog1
 rm a.out
