@@ -200,9 +200,19 @@ int main26() {
 /*
  *
  */
-
+/*
 int main() {
   int ret = 0;
   ret = main26();
   return ret;
+}
+*/
+
+
+/*
+ *
+ */
+
+int main() {
+  return 0;
 }
