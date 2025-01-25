@@ -222,7 +222,16 @@ int main() {
  *
  */
 
-
 int main() {
+  int r = 2 * 13;
+  int c = 8 * 10;
+  int p = 0;  
+  printf("%d*%d = %d\n", r, c, r * c);
+  for (int i = r % 27; i > 0; i--) {
+    printf("%d:%p\n", i, p);
+    for (int n = i; n; n--) {
+      printf("n:%d\n", n);
+    }
+  }
   return 0;
 }
