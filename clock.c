@@ -138,6 +138,7 @@ int main(int argc, char *argv[]) {
  * OK so lets implement this 4 byte 32 bit thing holding a 26bit thing.
  */
 
+/*
 int faclock() {
   static int bs = 1;
   return ++bs;
@@ -146,5 +147,37 @@ int faclock() {
 int main() {
   char pass = 'a';
   for(;pass != 'c';) { if (faclock() == 26) pass++; }
+  return 0;
+}
+
+*/
+
+/*
+ * OK so we remember the clackalope is 2 8 based digits
+ *
+ *
+ * 001 100 if clackvalue == 2601 or (clackvalue == (65347568 - 1)
+ * 010 010 if clackvalue % ((2601 - 8) || (2601 + 8))
+ * 100 001 if clackvalue odd
+ * 110 011 if clackvalue even
+ * radmode4 16265177
+ * OK so we said the clacket has these 4 modes in base 8 digits:
+ * 1 4 16 - 1 4
+ * 2 2 26 - 2 2
+ * 4 1 51 - 4 1
+ * 6 3 77 - 7 7
+ * 000 0
+ * 001 1
+ * 010 2
+ * 011 3
+ * 100 4
+ * 101 5
+ * 110 6
+ * 111 7
+ */
+
+int main() {
+  static const int radmode4 = 16265177;
+  printf("radmode4 %d\n", radmode4);
   return 0;
 }
