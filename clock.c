@@ -175,9 +175,34 @@ int main() {
  * 110 6
  * 111 7
  */
-
+/*
 int main() {
   static const int radmode4 = 16265177;
   printf("radmode4 %d\n", radmode4);
   return 0;
+}
+
+
+*/
+
+
+/*
+ *
+ */
+
+int main26() {
+  for (int i = 'a'; i != 123; i++) {
+    printf("%c\n", i);
+  }
+  return 0;
+}
+
+/*
+ *
+ */
+
+int main() {
+  int ret = 0;
+  ret = main26();
+  return ret;
 }
