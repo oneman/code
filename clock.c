@@ -241,8 +241,30 @@ int main() {
  *
  */
 
+int yar() {
+  return 67108864/60/60/24+1000;
+}
+
+
 int main() {
-  int arev = 67108864/60/60/24+1000;
-  printf("%d\n", arev);
+/*char abc[1 * 2 * (3 + 10101010101010101010)] = "abcdefghijklmnopqrstuvwxyz";*/
+  char abc[1 * 2 * (3 + 10)] = "abcdefghijklmnopqrstuvwxyz";
+  char line[2 * 2 * 2 * 10];
+
+  sprintf(line, "/*%26s*/", abc);
+  printf("%30s]\n", line);
+  return 1;
+  /*printf("%d\n", yar());*/
+  for (int n = 1;n < 27; n++) {
+    /*printf("%02d: ", n);*/
+    for (int b = 1; b < 27; b++) {
+      if (b == 27 - n) {
+        printf("1");
+      } else {
+        printf("0");
+      }
+    }
+    printf("\n");
+  }
   return 0;
 }
