@@ -333,9 +333,9 @@ int packclack(int clack) {
       }
     }
   }
-  if ((clack % 1000000) == 0) {
-    printf("clack %8d mode %d\n", clack, mode);
-  }
+  //if ((clack % 1000000) == 0) {
+ //   printf("clack %8d mode %d\n", clack, mode);
+  //}
   if ((mode > 0) && (mode < 5)) return mode;
   return -2;
 }
@@ -346,12 +346,18 @@ int main() {
   int nmode3 = 0;
   int nmode4 = 0;
   for (int i = 0; i < 67108864; i++) {
-    if (packclack(i) < 1) return 1;
-    if (packclack(i) > 4) return 1;
-    if (packclack(i) == 1) nmode1++;
-    if (packclack(i) == 2) nmode2++;
-    if (packclack(i) == 3) nmode3++;
-    if (packclack(i) == 4) nmode4++;
+    int mode = packclack(i);
+    if (mode < 1) return 1;
+    if (mode > 4) return 1;
+    if (mode == 1) {
+      nmode1++;
+    } else if (mode == 2) {
+      nmode2++;
+    } else if (mode == 3) {
+      nmode3++;
+    } else if (mode == 4) {
+      nmode4++;
+    }
   }
   printf("Results: %8d %8d %8d %8d\n", nmode1, nmode2, nmode3, nmode4);
   return 0;
