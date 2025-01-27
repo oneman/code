@@ -303,8 +303,8 @@ int main() {
  *
  */
 
-/* int radmode4 = 16265177; */
-
+/* int radmode4 = 16265177; *
+ * 
 int packclack(int clack) {
   if (clack < 0) return -1;
   if (clack > 67108863) return -6;
@@ -313,32 +313,34 @@ int packclack(int clack) {
     printf("clack %d\n", clack);
   }
   if ((clack == 2601) || (clack == 65347568 - 1)) {
-    /* 001 100 */
+    * 001 100
     mode = 1;
     int clacket = 0b00100000000000000000000000000100;
     printf("clack: %d\nclacket: %d\n", clack, clacket);
   } else {
     if ((clack % (2601 - 8) == 0) || (clack % (2601 + 8) == 0)) {
-      /* 010 010 */
+      * 010 010
       mode = 2;
     } else {
       if ((clack % 2) == 1) {
-        /* 100 001 */
+        * 100 001
         mode = 3;
       } else {
         if ((clack % 2) == 0) {
-          /* 110 011 */
+          * 110 011
           mode = 4;
         }
       }
     }
   }
-  //if ((clack % 1000000) == 0) {
- //   printf("clack %8d mode %d\n", clack, mode);
-  //}
+  * if ((clack % 1000000) == 0) {
+  *    printf("clack %8d mode %d\n", clack, mode);
+  * }
   if ((mode > 0) && (mode < 5)) return mode;
   return -2;
 }
+
+* 2+51594+33528634+33528634
 
 int main() {
   int nmode1 = 0;
@@ -360,5 +362,45 @@ int main() {
     }
   }
   printf("Results: %8d %8d %8d %8d\n", nmode1, nmode2, nmode3, nmode4);
+  return 0;
+}
+*/
+
+#include <time.h>
+
+/*
+int main() {
+    * Get the current time
+    time_t current_time = time(NULL);
+
+    * Check if time() returned an error
+    if (current_time == ((time_t) -1)) {
+        perror("time");
+        return 1;
+    }
+
+    * Print the Unix time
+    printf("Current Unix time: %ld\n", current_time);
+
+    return 0;
+}
+*
+
+int main() {
+  time_t current_time = time(NULL);
+  if (current_time == ((time_t) -1)) {
+    perror("time");
+    return 1;
+  }
+  printf("%ld\n", current_time);
+  return 0;
+}
+*/
+#include <stdlib.h>
+
+int main() {
+  srand(time(NULL));
+  int random_bit = rand() % 2;
+  printf("%d\n", random_bit);
   return 0;
 }
