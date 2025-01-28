@@ -1,0 +1,19 @@
+Host: computer
+Machine: aarch64
+Sysname: Linux
+Release: 6.6.62+rpt-rpi-2712
+Version: #1 SMP PREEMPT Debian 1:6.6.62-1+rpt1 (2024-11-25)
+sizeof short 2
+sizeof int 4
+sizeof float 4
+sizeof long int 8
+sizeof long long 8
+sizeof size_t 8
+sizeof ssize_t 8
+sizeof off_t 8
+sizeof ptrdiff_t 8
+sizeof wchar_t 4
+sizeof time_t 8
+Uptime: 26 days, 17 hours, 29 minutes, 15 seconds
+Load Avgs: 1min(5760) 5min(16192) 15min(48864)
+Total Ram: 8241408k	Free: 5959728k

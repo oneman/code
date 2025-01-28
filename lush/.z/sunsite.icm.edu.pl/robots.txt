@@ -1,0 +1,6 @@
+User-agent: Googlebot
+Disallow: /pub/winsite/win95/
+Disallow: /packages/winsite/win95/
+
+User-agent: *
+Disallow: /packages/graffiti/

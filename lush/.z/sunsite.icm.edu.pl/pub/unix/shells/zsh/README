@@ -1,0 +1,70 @@
+-------------------
+FTP ARCHIVE FOR ZSH
+-------------------
+
+General
+-------
+
+README
+   You're reading it.
+
+META-FAQ
+   Information about zsh ftp sites, web sites, and mailing lists.
+
+FAQ
+   The zsh Frequently Asked Questions (FAQ) list.
+
+pubring.pgp
+   PGP keys of some major Zsh developers.
+
+MD5SUM
+   MD5 checksums of each file.
+
+Source Code
+-----------
+
+Files exist in versions compressed with gzip (.gz) and with bzip2 (.bz2).
+
+zsh.tar.gz, zsh.tar.bz2
+   Latest production release of zsh.  Includes the source files of all
+   documentation.
+
+zsh-dev.tar.gz, zsh-dev.tar.bz2
+   The current development version of zsh.  Not guaranteed to be stable.
+   If there is no such file, the latest version of the shell is the
+   production release.
+
+zsh-*.tar.gz,m zsh-*.tar.bz2
+   Specific zsh versions.  If you just want the latest zsh then use
+   zsh.tar.gz or zsh-dev.tar.gz or the .bz2 equivalents.  Only the
+   latest production and (maybe) development release are in the top
+   level directory; older versions are in the "old" directory.
+
+old/*
+   Older zsh versions.  Of historical interest only.
+
+development/zsh-*.tar.gz, development/zsh-*.tar.bz2
+   Versions of zsh for testing by zsh enthusiasts.  You are welcome to
+   try this --- and in particular if you wish to report a bug, it is a
+   very good idea to check whether it occurs in this version first ---
+   but it is likely to be less stable than the last official release.
+
+Documentation
+-------------
+You don't need these files if you have all the necessary tools for creating
+them from the source distribution (`make everything' in the Doc
+subdirectory).
+
+zsh-doc.tar.gz, zsh-doc.tar.bz2
+   Pre-built Postscript, Info, DVI and HTML versions of the documentation
+   contained in the stable zsh distribution zsh.tar.gz.
+
+zsh-dev-doc.tar.gz, zsh-dev-doc.tar.bz2
+   Pre-built Postscript, Info, DVI and HTML versions of the documentation
+   contained in the beta zsh distribution zsh-dev.tar.gz.  Only present
+   if there has been a development release since the last stable release
+   of the shell.
+
+zsh-*-doc.tar.gz, zsh-*-doc.tar.bz2
+   Pre-built documentation for specific zsh versions.  See the "old"
+   directory for versions other than the latest.
