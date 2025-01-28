@@ -1,0 +1,19 @@
+[oneman@spontaneity test]$ ls
+catplog.sh  plog.sh
+code        timespacegitspaceclonespacehttpcolonslashslashgithubdotcomslashonemanslashcode.errlog
+paste
+[oneman@spontaneity test]$ ./catplog.sh 
+*#ip addr | grep "6 2"
+    inet6 2600:8805:3e00:216::56e/128 scope global dynamic noprefixroute 
+    inet6 2600:8805:3e00:216:fc09:3ca4:702b:6024/64 scope global dynamic noprefixroute 
+*#
+
+
+    inet6 2001:19f0:8000:1c38:5400:4ff:fecf:58cd/64 scope global dynamic noprefixroute 
+    inet6 2001:19f0:8000:1c38:5400:4ff:fecf:58cd/64 scope global dynamic noprefixroute 
+[oneman@spontaneity test]$ cat catplog.sh 
+cat ~/p.log
+[oneman@spontaneity test]$ cat plog.sh 
+ip addr|grep "6 2" >> ~/p.log
+[oneman@spontaneity test]$ 
+

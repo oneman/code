@@ -1,0 +1,2 @@
+    inet6 2600:8805:3e00:216::56e/128 scope global dynamic noprefixroute 
+    inet6 2600:8805:3e00:216:fc09:3ca4:702b:6024/64 scope global dynamic noprefixroute 
