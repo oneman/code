@@ -1,0 +1,27 @@
+hexdump -C lines.txt 
+vim lines.txt 
+hexdump -C lines.txt 
+vim lines.txt 
+tail lines.txt 
+hexdump -C lines.txt 
+gs
+hexdump -C lines.txt 
+vim lines.txt 
+hexdump -C lines.txt 
+exit
+vim code/lines.txt 
+tmux a
+pwd
+wget -O UnicodeData4.1.txt https://www.unicode.org/Public/4.1.0/ucd/UnicodeData.txt
+ls -l UnicodeData*
+wc UnicodeData16.txt 
+wc UnicodeData4.1.txt 
+wc -l UnicodeData4.1.txt 
+wc -l UnicodeData16.txt 
+xit
+exit
+righton
+lefton
+date 
+exit
+tail -n26 ~/.bash_history >> tailspacedashntwentysixspacetildedotbashunderscorehistory tailspacedashntwentysixspacetildedotbashunderscorehistory.true.sto
