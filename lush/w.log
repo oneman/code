@@ -1,0 +1,5 @@
+ 01:08:07 up 26 days, 21:17,  3 users,  load average: 0.67, 0.83, 1.10
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+demo              -                18Jan25  8:33m  7:44m  2:16m /usr/bin/labwc -m
+demo     tty1     -                01Jan25 26days  0.02s  0.02s -bash
+demo     pts/4    tmux(3707716).%3 21Jan25 20:25m 23.90s 23.87s ssh oneman@radcompany.us

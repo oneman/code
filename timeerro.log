@@ -1,0 +1,22 @@
+*#date; gcc --version; gcc -Wall current_unixtime.c 
+Tue Jan 28 02:51:48 PM EST 2025
+gcc (Debian 12.2.0-14) 12.2.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+current_unixtime.c: In function ‘main’:
+current_unixtime.c:9:12: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘time_t’ {aka ‘long int’} [-Wformat=]
+    9 |   printf("%d\n", its);
+      |           ~^     ~~~
+      |            |     |
+      |            int   time_t {aka long int}
+      |           %ld
+*#clang -Wall current_unixtime.c 
+current_unixtime.c:9:18: warning: format specifies type 'int' but the argument has type 'time_t' (aka 'long') [-Wformat]
+  printf("%d\n", its);
+          ~~     ^~~
+          %ld
+1 warning generated.
+*#clang --version
+Debian clang version 14.0.6

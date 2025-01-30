@@ -398,9 +398,118 @@ int main() {
 */
 #include <stdlib.h>
 
+/*
+
+if mode<3:
+DDDDDUUUUUHHHRMMMMMMSSSSSS
+12345123451231123456123456
+
+if mode>2:
+DRDUMSDUSDUMSHMSDUMSMUHSHM
+11211122233231344445552636
+
+*/
+
+int clack(char rndmsbit, long now, char letter) {
+  /*static char dat1a[32728];*/
+  /*static long traka[512];*/
+  if (rndmsbit == 0) return 1;
+  if (now <= 60) return 2;
+  if (letter == 0) return 3;
+  if ((letter >= 'a') && (letter <= 'z')) {
+    printf("%c = lowercase letter\n", letter);
+  } else {
+    if ((letter >= 'A') && (letter <= 'Z')) {
+      printf("%c = capital letter\n", letter);
+    } else {
+      return 4;
+    }
+  }
+  /*printf("%d = sizeof(dat1a);\n", sizeof(dat1a));*/
+        if (rndmsbit == 0b10000000) {
+        printf("10000000 = rndmsbit\n");
+        } else {
+        if (rndmsbit == 0b01000000) {
+        printf("01000000 = rndmsbit\n");
+        } else {
+        if (rndmsbit == 0b00100000) {
+        printf("00100000 = rndmsbit\n");
+        } else {
+        if (rndmsbit == 0b00010000) {
+        printf("00010000 = rndmsbit\n");
+        } else {
+        if (rndmsbit == 0b00001000) {
+        printf("00001000 = rndmsbit\n");
+        } else {
+        if (rndmsbit == 0b00000100) {
+        printf("10000100 = rndmsbit\n");
+        } else {
+        if (rndmsbit == 0b00000010) {
+        printf("00000010 = rndmsbit\n");
+        } else { if (rndmsbit == 0b00000001) {printf("00000001 = rndmsbit\n");
+        }}}}}}}
+  }
+  printf("%ld = now\n", now);
+  printf("%c = letter\n", letter);
+  return 5;
+}
+
+/*
+ * 🍯 🍯 🍯 🍯 🍯
+ *   🍯 🍯 🍯 🍯 🍯
+ * 🍯 🍯 🍯 🍯 🍯 🍯
+ *   🍯 🍯 🍯 🍯 🍯
+ * 🍯 🍯 🍯 🍯 🍯
+ * 
+ *
+
+🐍🐋🌊🦝💌⌨️🔑📝🐍🐋🌊
+
+
+*/
+#include <sys/time.h>
+#include <sys/random.h>
+
+long math(long a, long b) {
+  long i;
+  for (i = 1; i < b; i++) {
+    a = a + a;
+  }
+  return a;
+}
+
+long mathmath(long a, long b) {
+  long i;
+  for (i = 1; i < b; i++) {
+    a = math(a, a);
+  }
+  return a;
+}
+
 int main() {
-  srand(time(NULL));
-  int random_bit = rand() % 2;
-  printf("%d\n", random_bit);
+/*  long R = 1;
+  long N = 1;
+  long T = 0;
+  long now = time(&T);
+  char dogma[32678];*/
+  printf("%ld = 1 * 1\n", math(1,1));
+  printf("%ld = 2 * 2\n", math(2,2));
+  printf("%ld = 4 * 4\n", math(4,4));
+  printf("%ld = 5 * 5\n", math(5,5));
+  printf("%ld = 2 * 13\n", math(2,13));
+  printf("%ld = 13 * 2\n", math(13,2));
+  printf("%ld = 26 * 26\n", math(26,26));
+  printf("%ld = pwr(26,2)\n", mathmath(26,2));
+  printf("%ld = pwr(2,26)\n", mathmath(2,26));
+  
+
+  printf("K\n");
+
+  for (;;) {
+    /*R = getrandom(dogma,                size_t buflen  ,
+                   unsigned int flags  );
+    long = random() % 126 + 128;
+    */
+  }
   return 0;
 }

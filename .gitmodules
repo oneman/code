@@ -4,3 +4,6 @@
 [submodule "daala"]
 	path = d
 	url = https://gitlab.xiph.org/xiph/daala
+[submodule "Mozilla🦊"]
+	path = Mozilla🦊
+	url = https://github.com/mozilla/gecko-dev

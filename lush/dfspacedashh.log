@@ -1,0 +1,18 @@
+Filesystem      Size  Used Avail Use% Mounted on
+udev            3.9G     0  3.9G   0% /dev
+tmpfs           805M  6.5M  799M   1% /run
+/dev/mmcblk0p2  229G  198G   20G  91% /
+tmpfs           4.0G  832K  4.0G   1% /dev/shm
+tmpfs           5.0M   96K  5.0M   2% /run/lock
+/dev/loop0      128K  128K     0 100% /snap/bare/5
+/dev/loop1       62M   62M     0 100% /snap/core24/612
+/dev/loop5       92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop7       88M   88M     0 100% /snap/mesa-2404/142
+/dev/loop6       93M   93M     0 100% /snap/mesa-2404/48
+/dev/loop9       39M   39M     0 100% /snap/snapd/23259
+/dev/mmcblk0p1  510M   77M  434M  15% /boot/firmware
+tmpfs           805M  432K  805M   1% /run/user/1000
+/dev/loop10      39M   39M     0 100% /snap/snapd/23546
+/dev/loop8      394M  394M     0 100% /snap/gnome-46-2404/67
+/dev/loop3       62M   62M     0 100% /snap/core24/719
+/dev/loop2      397M  397M     0 100% /snap/gnome-46-2404/75

@@ -1,0 +1,107 @@
+        Fox Face 🦊
+        Television 📺 
+        Satellite Antenna 📡
+        Link Symbol 🔗
+        Troll 🧌
+        Fax Machine 📠
+        📰 Newspaper
+        🔖 bookmark
+        🖵  Screen
+        🔤
+        Input Symbol for Latin Letters
+        🔢
+        Input Symbol for Numbers
+        🏇 Horse Racing
+        🖱️ Three Button Mouse
+        🖳      Old Personal Computer
+        🖥️     Desktop Computer
+
+typedef c char;
+
+        char *http = "GET /\r\n";
+
+U+260E U+FE0F
+
+Black Telephone
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+☎️              
+                
+
+📞  Telephone Receiver U+1F4DE
+
+🤙 Call Me Hand 
+
+🤳Selfie
+
+✈️  Airplane  U+2708 U+FE0F  
+
+  🔊  U+1F50A  Speaker with Three Sound Waves
+
+🤖  Robot Face  U+1F916   🎹  U+1F3B9  Musical Keyboard  📀  
+
+U+1F4C0 DVD
+
+💿  Optical Disc  U+1F4BF 
+
+💽  U+1F4BD  Minidisc  
+
+  🖲️ Trackball U+1F5B2 U+FE0F 
+
+
+U+1F5A8 U+FE0F 🖨️  Printer
+
+U+2328 U+FE0F ⌨️      Keyboard
+
+🔣  U+1F523  Input Symbol for Symbols  
+
+🕹️  Joystick U+1F579 U+FE0F  
+
+U+1F4F9  📹  Video Camera 
+
+Control Knobs  U+1F39B U+FE0F      🎛️     
+
+
+
+int main() {
+  int nmode1 = 0;
+  int nmode2 = 0;
+  int nmode3 = 0;
+  int nmode4 = 0;
+  for (int i = 0; i < 67108864; i++) {
+    int mode = packclack(i);
+    if (mode < 1) return 1;
+    if (mode > 4) return 1;
+    if (mode == 1) {
+      nmode1++;
+    } else if (mode == 2) {
+      nmode2++;
+    } else if (mode == 3) {
+      nmode3++;
+    } else if (mode == 4) {
+      nmode4++;
+    }
+  }
+  printf("Results: %8d %8d %8d %8d\n", nmode1, nmode2, nmode3, nmode4);
+  return 0;
+}
+
+/*
+18446744073709551615
+*/
+
