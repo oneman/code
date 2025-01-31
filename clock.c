@@ -485,13 +485,8 @@ long mathmath(long a, long b) {
   }
   return a;
 }
-
-int main() {
-/*  long R = 1;
-  long N = 1;
-  long T = 0;
-  long now = time(&T);
-  char dogma[32678];*/
+/*
+ *
   printf("%ld = 1 * 1\n", math(1,1));
   printf("%ld = 2 * 2\n", math(2,2));
   printf("%ld = 4 * 4\n", math(4,4));
@@ -501,15 +496,93 @@ int main() {
   printf("%ld = 26 * 26\n", math(26,26));
   printf("%ld = pwr(26,2)\n", mathmath(26,2));
   printf("%ld = pwr(2,26)\n", mathmath(2,26));
-  
-
   printf("K\n");
+ *
+ *
+ */
+/*  (2 ^ 13) - (64896 / 8)
+ ABCDEFGHIJKLMNO
+PQRSTUVWXYZ,-.?!
+ *   */
+/*
+ *
+ * 
+ab cd efg hi jk lmnop qrs tuv w x y z
+ *
+ *
+*/
 
-  for (;;) {
-    /*R = getrandom(dogma,                size_t buflen  ,
-                   unsigned int flags  );
-    long = random() % 126 + 128;
-    */
+void cs(char *d, char s, long sz) {
+  for (long i = 0; i < sz; i++) d[i] = s;
+}
+
+void cp(char *d, char *s, long sz) {
+  for (long i = 0; i < sz; i++) d[i] = s[i];
+}
+
+#include <unistd.h>
+#include <errno.h>
+#include <sys/ioctl.h>
+#include <signal.h>
+
+static char U = 'S';
+
+void handlesignal(int sign) {
+  char letter = (sign - 1)  % 26 + 95;
+  printf("Signal %d to letter %c\n", sign, letter);
+  U = letter;
+}
+
+int main() {
+  long now;
+  char C[26];
+  long A = 1;
+  long R = 0;
+  long T = time(&now);
+  char *PS = ctime_r(&T, C);
+  char dogma[32768];
+  long sz = sizeof(dogma);
+  for (;R!=sz;) R = getrandom(dogma, sz, 0);
+  struct winsize wsz;
+  ioctl(0, TIOCGWINSZ, &wsz);
+  printf("tiowsz: %i*%i\n", wsz.ws_col, wsz.ws_row);
+  for (int i = 1; i < 'A'; i++) {
+    if (i == SIGSTOP) continue;
+    if (i == SIGKILL) continue;
+    if (i == 32) { i++; continue; }
+    if (signal(i, handlesignal) == SIG_ERR) {
+      printf("errno %d\n", errno);
+      perror("lol fail\n");
+      return 2;
+    } else {
+      printf("signal %d good to go\n", i);
+    }
   }
-  return 0;
+  for (;;) {
+    char line[82];
+    T = time(&now);
+    PS = ctime_r(&T, C);
+    if (C[24] != '\n') C[24] = '\n';  /* If it can't be, */
+    if (C[25] != '\0') C[25] = '\0';  /* Then, it isn't. */
+    for (;R!=8;) R = getrandom(&A, 8, 0);
+    A = A * 1 % 2;
+    long D = T/86400;
+    long Y = D/365;
+    long Ds= T % 86400;
+    long DS = Ds / (86400/3);
+    long DSH = ((Ds % (86400/3)) / (60 * 60));
+    long HM = (Ds % (60 * 60)) / 60;
+    long MS = Ds % 60;
+
+    cs(line, 'K', 58);
+    cp(line + 56, PS, 26);
+
+    /*snprintf(line + 24, 81 - 24, "[%ld] Y%ld D%ld DS:%ld Ds%ld DSH:%ld HM:%ld:%ld R%ld",
+     T, Y, D, DS, Ds, DSH, HM, MS, A);
+*/
+
+    printf("%s\n", line);
+    pause();
+  }
+  return 1;
 }
