@@ -1,0 +1,3 @@
+int i = 1, want = 2, make = 4;
+char *pcb ="QDB Quad damage board, w/ 07tacore";
+for(ATmega328P;ATmega2560;RP2040;RP2350) { ... }
