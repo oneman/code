@@ -463,7 +463,7 @@ int clack(char rndmsbit, long now, char letter) {
  * 
  *
 
-🐍🐋🌊🦝💌⌨️🔑📝🐍🐋🌊
+🐍🐋🌊🦝💌⌨️ 🔑📝🐍🐋🌊
 
 
 */
@@ -527,14 +527,38 @@ void cp(char *d, char *s, long sz) {
 
 static const char Fe = 26;
 static long I = 1;
-static char U = ' ';
+static char U = 'R';
 static long T = 0;
 static long sStarTime = -Fe;
 
 void handsignal(int sign) {
-  if (sign == SIGALRM) return;
-  if ((T-sStarTime<2600) && (sign == SIGINT || sign == SIGSTOP)) I = -1;
+  if (sign == SIGALRM) {
+    if (U == 'R') {
+      U = 'Y';
+    } else {
+      U = 'R';
+    }
+    return;
+  }
+  if (sign == SIGINT || sign == SIGSTOP) {
+   I = -1;
+   return;
+  }
   U = (sign - 1) % Fe + 96;
+}
+
+char getbit(long *bitbufpos, long sz, char *buf) {
+  long bytebufpos = *bitbufpos / 8;
+  long bytebitpos = *bitbufpos % 8;
+  char byte = buf[bytebufpos];
+  char bit = (byte & (1u << bytebitpos) ? '1' : '0');
+  /*
+  printf("bitbufpos %ld bytebufpos %ld bytebitpos %ld sz %ld bit %c\n",
+   *bitbufpos, bytebufpos, bytebitpos, sz, bit);
+  */
+  *bitbufpos = *bitbufpos + 1;
+  if (*bitbufpos == sz * 8) *bitbufpos = 0;
+  return bit;
 }
 
 int main() {
@@ -543,15 +567,12 @@ int main() {
   long R = 1 + A;
   sStarTime = now;
   char C[26];
-  char D[32768];
+  char dogma[32768];
   char line[82];
   char *PS = ctime_r(&T, C);
-  long Dsz = sizeof(D);
-  struct winsize wsz;
-  for (;R!=Dsz;) R = getrandom(D, Dsz, 0);
-  ioctl(0, TIOCGWINSZ, &wsz);
-  /*printf("%i*%i\n", wsz.ws_col, wsz.ws_row);*/
-  /*printf("%c = U\n", U);*/
+  long Dsz = sizeof(dogma);
+  long Dpos = 0;
+  for (;R!=Dsz;) R = getrandom(dogma, Dsz, 0);
   for (int s = 1; s < 'A'; s++) {
     if ((s == 2 + 30) || (s == 3 + 30) ||
         (s == SIGSTOP) || (s == SIGKILL)) continue;
@@ -560,42 +581,73 @@ int main() {
   if (setvbuf(stdin, NULL, _IONBF, 0)) return 5;
   if (setvbuf(stdout, NULL, _IONBF, 0)) return 6;
   printf("Clock Line Acknowledgement Internetworking System 1.0.1\n");
+  struct itimerval TheInterval;
+  static const int THEINTERVAL = 1;
+  TheInterval.it_interval.tv_sec = THEINTERVAL;
+  TheInterval.it_interval.tv_usec = 0;
+  TheInterval.it_value.tv_sec = 1;
+  TheInterval.it_value.tv_usec = 0;
+  R = setitimer(ITIMER_REAL, &TheInterval, NULL);
+  if (R) return printf("setitimer %ld\n", R);
   for (;I==1;) {
-    //printf("\r");
     now = time(&T);
     PS = ctime_r(&T, C);
     if (C[24] != '\n') C[24] = '\n';  /* If it can't be, */
     if (C[25] != '\0') C[25] = '\0';  /* Then, it isn't. */
-    for (;R!=8;) R = getrandom(&A, 8, 0);
-    A = A * 1 % 2;
-    /*
+    for (;A!=8;) A = getrandom(&R, 8, 0);
+    A = 1;
+    if (R > 1) R = 1;
+    if (R < 1) R = 0;    
     long D = T/86400;
     long Y = D/365;
     long Ds= T % 86400;
-    long DS = Ds / (86400/3);
-    long DSH = ((Ds % (86400/3)) / (60 * 60));
+    long DH = Ds / 3600;
+    long DS = DH / 8;
+    long DSH = DH % 8;
     long HM = (Ds % (60 * 60)) / 60;
-    long MS = Ds % 60;*/
-    cs(line, 'K', 58);
+    long MS = Ds % 60;
+    printf("D: %ld\n", D);
+    printf("Y: %ld\n", Y);
+    printf("Ds: %ld\n", Ds);
+    printf("DH: %ld\n", DH);
+    printf("DS: %ld\n", DS);
+    printf("DSH: %ld\n", DSH);
+    printf("HM: %ld\n", HM);
+    printf("MS: %ld\n", MS);
+    printf("R: %ld\n", R);
+    printf("U: %c\n", U);
+    cs(line, ' ', 58);
     cp(line + 56, PS, 26);
+/*
+DRDDDDUUUUUHHHMMMMMMSSSSSS
+*/
+   printf("\n"); 
+    char dbit[5];
+    char rbit = (R & (1u << 0) ? '1' : '0');
+    for (int i = 0; i < 5; i++) {
+      if (i == 1) putchar(rbit);
+      dbit[i] = getbit(&Dpos, Dsz, dogma);
+      putchar(dbit[i]); 
+    }
+    for (int j = 5 - 1; j >= 0; j--) {
+      putchar(U & (1u << j) ? '1' : '0');
+    }
+    for (int j = 3 - 1; j >= 0; j--) {
+      putchar(DSH & (1u << j) ? '1' : '0');
+    }
+    for (int j = 6 - 1; j >= 0; j--) {
+      putchar(HM & (1u << j) ? '1' : '0');
+    }
+    for (int j = 6 - 1; j >= 0; j--) {
+      putchar(MS & (1u << j) ? '1' : '0');
+    }
+   printf("\n"); 
+
     /*snprintf(line + 24, 81 - 24, "[%ld] Y%ld D%ld DS:%ld Ds%ld DSH:%ld HM:%ld:%ld R%ld",
      T, Y, D, DS, Ds, DSH, HM, MS, A); */
+
     printf("%s", line);
-    static int installed = 0;
-    struct itimerval TheInterval;
-    static const int THEINTERVAL = 1;
-    TheInterval.it_interval.tv_sec = THEINTERVAL;
-    TheInterval.it_interval.tv_usec = 0;
-    TheInterval.it_value.tv_sec = 1;
-    TheInterval.it_value.tv_usec = 0;
-    if (!installed) {
-      R = setitimer(ITIMER_REAL, &TheInterval, NULL);
-      if (R) printf("setitimer %ld\n", R);
-      if (R == 0) installed = 1;
-    } else { alarm(1); }
-    //pause();
-    char WTF = getchar();
-    if (WTF>11) printf("WTF: %c\n", WTF);
+    pause();
   }
   return printf("\nKbye\n");
 }
