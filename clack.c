@@ -617,31 +617,59 @@ int main() {
     printf("R: %ld\n", R);
     printf("U: %c\n", U);
     cs(line, ' ', 58);
+    line[26] = '-';
+    line[53] = '[';
+    line[54] = '@';
+    line[55] = ']';
     cp(line + 56, PS, 26);
 /*
 DRDDDDUUUUUHHHMMMMMMSSSSSS
+CCCCCCDR
+DDDDUUUU
+UHHHMMMM
+MMSSSSSS
 */
-   printf("\n"); 
+
+    /*char clacket[32];*/
+    /*char clackalope[6];*/
+    char clack[26];
+    //int iclack = 0;
+    printf("\n"); 
     char dbit[5];
     char rbit = (R & (1u << 0) ? '1' : '0');
     for (int i = 0; i < 5; i++) {
-      if (i == 1) putchar(rbit);
+      //if (i == 1) putchar(rbit);
       dbit[i] = getbit(&Dpos, Dsz, dogma);
-      putchar(dbit[i]); 
+      //putchar(dbit[i]); 
     }
+    clack[0] = dbit[0];
+    clack[1] = rbit;
+    clack[2] = dbit[1];
+    clack[3] = dbit[2];
+    clack[4] = dbit[3];
+    clack[5] = dbit[4];
+    int clackpos = 6;
     for (int j = 5 - 1; j >= 0; j--) {
-      putchar(U & (1u << j) ? '1' : '0');
+      //putchar(U & (1u << j) ? '1' : '0');
+      clack[clackpos++] = (U & (1u << j) ? '1' : '0');
     }
     for (int j = 3 - 1; j >= 0; j--) {
-      putchar(DSH & (1u << j) ? '1' : '0');
+      //putchar(DSH & (1u << j) ? '1' : '0');
+      clack[clackpos++] = (DSH & (1u << j) ? '1' : '0');
     }
     for (int j = 6 - 1; j >= 0; j--) {
-      putchar(HM & (1u << j) ? '1' : '0');
+      //putchar(HM & (1u << j) ? '1' : '0');
+      clack[clackpos++] = (HM & (1u << j) ? '1' : '0');
     }
     for (int j = 6 - 1; j >= 0; j--) {
-      putchar(MS & (1u << j) ? '1' : '0');
+      //putchar(MS & (1u << j) ? '1' : '0');
+      clack[clackpos++] = (MS & (1u << j) ? '1' : '0');
     }
-   printf("\n"); 
+
+    printf("\n"); 
+
+    cs(line + 0, '1', 26);
+    cp(line + 27, clack, 26);
 
     /*snprintf(line + 24, 81 - 24, "[%ld] Y%ld D%ld DS:%ld Ds%ld DSH:%ld HM:%ld:%ld R%ld",
      T, Y, D, DS, Ds, DSH, HM, MS, A); */
