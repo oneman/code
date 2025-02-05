@@ -304,44 +304,73 @@ int main() {
  */
 
 /* int radmode4 = 16265177; *
- * 
-int packclack(int clack) {
+ */
+unsigned int packclack(char clackstring[26]) {
+
+  unsigned int clack = 0;
+  clack = 0;
+  for (int i = 0; i < 26; i++) {
+   putchar(clackstring[i]);
+    if (clackstring[i] == '0') {
+printf("zero\n");
+       //clack = clack << 1;
+      clack = clack * 2;
+    }
+    if (clackstring[i] == '1') {
+      //clack = clack | 1u;
+printf("wun\n");
+      clack = clack * 2;
+      clack = clack + 1;
+    }
+  printf("clack %d\n", clack);
+  }
+
+  printf("%u %26s\n", clack, clackstring); 
+  
+  /* 2+51594+33528634+33528634 */
   if (clack < 0) return -1;
   if (clack > 67108863) return -6;
   int mode = 0;
-  if ((clack % 1000000) == 0) {
-    printf("clack %d\n", clack);
-  }
+  
+  printf("clack val: %u\n", clack);
+  unsigned int clacket = 0;
   if ((clack == 2601) || (clack == 65347568 - 1)) {
-    * 001 100
+    /* 001 100 */
     mode = 1;
-    int clacket = 0b00100000000000000000000000000100;
-    printf("clack: %d\nclacket: %d\n", clack, clacket);
+    clacket = 805306368;
+    printf("emty clacket %u mode %d\n", clacket, mode);
+    clacket = clacket | clack;
   } else {
     if ((clack % (2601 - 8) == 0) || (clack % (2601 + 8) == 0)) {
-      * 010 010
+      /* 010 010 */
       mode = 2;
+     clacket = 1207959552;
+    printf("emty clacket %u mode %d\n", clacket, mode);
+    clacket = clacket | clack;
     } else {
       if ((clack % 2) == 1) {
-        * 100 001
+        /* 100 001 */
         mode = 3;
+ clacket = 2214592512;   
+    printf("emty clacket %u mode %d\n", clacket, mode);
+ clacket = clacket | clack;
       } else {
         if ((clack % 2) == 0) {
-          * 110 011
+          /* 110 011 */
           mode = 4;
+    clacket = 3422552064;
+    printf("emty clacket %u mode %d\n", clacket, mode);
+    clacket = clacket | clack;
         }
       }
     }
   }
-  * if ((clack % 1000000) == 0) {
-  *    printf("clack %8d mode %d\n", clack, mode);
-  * }
-  if ((mode > 0) && (mode < 5)) return mode;
+  printf("clacket %u mode %d\n", clacket, mode);
+  if ((mode > 0) && (mode < 5)) return clacket;
   return -2;
 }
 
-* 2+51594+33528634+33528634
-
+/*
 int main() {
   int nmode1 = 0;
   int nmode2 = 0;
@@ -409,10 +438,10 @@ DRDUMSDUSDUMSHMSDUMSMUHSHM
 11211122233231344445552636
 
 */
-
+/*
 int clack(char rndmsbit, long now, char letter) {
-  /*static char dat1a[32728];*/
-  /*static long traka[512];*/
+ static char dat1a[32728];
+ *static long traka[512];
   if (rndmsbit == 0) return 1;
   if (now <= 60) return 2;
   if (letter == 0) return 3;
@@ -425,7 +454,7 @@ int clack(char rndmsbit, long now, char letter) {
       return 4;
     }
   }
-  /*printf("%d = sizeof(dat1a);\n", sizeof(dat1a));*/
+  printf("%d = sizeof(dat1a);\n", sizeof(dat1a));
         if (rndmsbit == 0b10000000) {
         printf("10000000 = rndmsbit\n");
         } else {
@@ -453,6 +482,7 @@ int clack(char rndmsbit, long now, char letter) {
   printf("%c = letter\n", letter);
   return 5;
 }
+*/
 
 /*
  * 🍯 🍯 🍯 🍯 🍯
@@ -462,11 +492,12 @@ int clack(char rndmsbit, long now, char letter) {
  * 🍯 🍯 🍯 🍯 🍯
  * 
  *
-
-🐍🐋🌊🦝💌⌨️ 🔑📝🐍🐋🌊
-
-
+ *
+ * 🐍🐋🌊🦝💌⌨️ 🔑📝🐍🐋🌊
+ *
+ *
 */
+
 #include <sys/time.h>
 #include <sys/random.h>
 
@@ -538,7 +569,7 @@ void handsignal(int sign) {
     } else {
       U = 'R';
     }
-    return;
+  return;
   }
   if (sign == SIGINT || sign == SIGSTOP) {
    I = -1;
@@ -670,7 +701,9 @@ MMSSSSSS
 
     cs(line + 0, '1', 26);
     cp(line + 27, clack, 26);
-
+   unsigned int clacket = packclack(clack);
+   printf("clacket=%u\n", clacket); 
+   printf("0xclacket= [%x] \n", clacket); 
     /*snprintf(line + 24, 81 - 24, "[%ld] Y%ld D%ld DS:%ld Ds%ld DSH:%ld HM:%ld:%ld R%ld",
      T, Y, D, DS, Ds, DSH, HM, MS, A); */
 

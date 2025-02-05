@@ -7,3 +7,6 @@
 [submodule "Mozilla🦊"]
 	path = Mozilla🦊
 	url = https://github.com/mozilla/gecko-dev
+[submodule "lush/mupdf"]
+	path = lush/mupdf
+	url = https://github.com/ArtifexSoftware/mupdf
