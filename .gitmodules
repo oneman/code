@@ -25,3 +25,6 @@
 [submodule "lush/freetype-demos"]
 	path = lush/freetype-demos
 	url = https://gitlab.freedesktop.org/freetype/freetype-demos
+[submodule "lush/demo/demo2/labwc"]
+	path = lush/demo/demo2/labwc
+	url = https://github.com/labwc/labwc
