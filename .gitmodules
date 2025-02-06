@@ -16,3 +16,12 @@
 [submodule "lush/libc1a"]
 	path = lush/libc1a
 	url = https://github.com/oneman/libc1a.git
+[submodule "lush/cairo"]
+	path = lush/cairo
+	url = https://gitlab.freedesktop.org/cairo/cairo
+[submodule "lush/freetype"]
+	path = lush/freetype
+	url = https://gitlab.freedesktop.org/freetype/freetype
+[submodule "lush/freetype-demos"]
+	path = lush/freetype-demos
+	url = https://gitlab.freedesktop.org/freetype/freetype-demos
