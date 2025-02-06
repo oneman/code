@@ -10,3 +10,9 @@
 [submodule "lush/mupdf"]
 	path = lush/mupdf
 	url = https://github.com/ArtifexSoftware/mupdf
+[submodule "lush/1acutils"]
+	path = lush/1acutils
+	url = https://github.com/oneman/1acutils.git
+[submodule "lush/libc1a"]
+	path = lush/libc1a
+	url = https://github.com/oneman/libc1a.git
