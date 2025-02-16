@@ -28,3 +28,12 @@
 [submodule "lush/demo/demo2/labwc"]
 	path = lush/demo/demo2/labwc
 	url = https://github.com/labwc/labwc
+[submodule "lush/pipewire"]
+	path = lush/pipewire
+	url = https://gitlab.freedesktop.org/pipewire/pipewire
+[submodule "lush/wayland-protocols"]
+	path = lush/wayland-protocols
+	url = https://gitlab.freedesktop.org/wayland/wayland-protocols
+[submodule "lush/wayland-utils"]
+	path = lush/wayland-utils
+	url = https://gitlab.freedesktop.org/wayland/wayland-utils

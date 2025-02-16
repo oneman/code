@@ -1,0 +1,16 @@
+Gerber
+IGES
+PDF
+GCode
+Truetype
+DoomMap
+QuakeLevel
+STL
+
+gmp
+cairo tee trace script mupdf metafont
+
+AF_PACKET
+/dev/uinput
+wayland
+pipewire
