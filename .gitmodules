@@ -37,3 +37,6 @@
 [submodule "lush/wayland-utils"]
 	path = lush/wayland-utils
 	url = https://gitlab.freedesktop.org/wayland/wayland-utils
+[submodule "lush/demo/demo2/slurp"]
+	path = lush/demo/demo2/slurp
+	url = https://github.com/emersion/slurp
