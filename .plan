@@ -7,10 +7,13 @@ DoomMap
 QuakeLevel
 STL
 gmp cairo tee trace script mupdf metafont
-/demo/MAP80X26.PAM
-6543114240=1024*26*4*80*768
-memfd
-AF_PACKET
+/demo/MAP80X26.PAM sz = 73 + 6543114240=1024*26*4*80*768
+ uid root
+ mfd sz/seal/lock
+ LOADMAP 
+ nfd AF_PACKET
 /dev/uinput
 wayland
 pipewire
+
+

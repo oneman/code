@@ -1,0 +1,36 @@
+first print
+devkeyboard: /dev/input/by-id/usb-Dell_Dell_USB_Keyboard-event-kbd
+devmouse: /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-event-mouse
+devsound: /dev/snd/by-id/usb-ZOOM_Corporation_H4essential-00
+termios sz 60
+utsname sz 390
+sysinfo sz 112
+CPUID = 1 ? 0
+GS = 0
+FS = 136143698982720
+ret from tcsetattr is 0
+
+Mmmkay...
+ * -1
+it 6543114240! (52344913920 bit)
+We did it 6543114240!
+opened map fd 4
+
+
+got heada P7
+WIDTH 81920
+HEIGHT 19968
+DEPTH 4
+MAXVAL 255
+TUPLTYPE RGB_ALPHA
+ENDHDR
+K
+Msz = 6543114240 / 6543114240
+wtf Operation not permitted
+p = 0x7bd0e6d0f000
+cool 2147479552
+cool 4294959104
+cool 6442438656
+cool 6543114240
+kbye 0
+
