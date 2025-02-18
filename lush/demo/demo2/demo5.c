@@ -16,6 +16,18 @@
 #include <sys/utsname.h>
 #include <stddef.h>
 #include <sys/sysinfo.h>
+#include <linux/input.h>
+#include <linux/uinput.h>
+#include <sys/socket.h>
+#include <linux/if_packet.h>
+#include <linux/if_ether.h>
+#include <net/ethernet.h>
+#include <execinfo.h>
+#include <sys/timerfd.h>
+#include <sys/signalfd.h>
+#include <sys/epoll.h>
+#include <sys/eventfd.h>
+#include <netinet/in.h>
 
 static char *devkeyboard = "/dev/input/by-id/usb-Dell_Dell_USB_Keyboard-event-kbd";
 static char *devmouse = "/dev/input/by-id/usb-Logitech_USB_Optical_Mouse-event-mouse";
@@ -35,6 +47,26 @@ int main(int argc, char *argv[]) {
   if (1) { printf("utsname sz %zu\n", sizeof(unfo)); }
   if (1) { printf("sysinfo sz %zu\n", sizeof(snfo)); }
 
+int ethnet = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));
+
+printf("sock fd be %d\n", ethnet);
+
+/*
+int backtrace(void *buffer[.size], int size);
+char **backtrace_symbols(void *const buffer[.size], int size);
+
+int timerfd_create(int clockid, int flags);
+int timerfd_settime(int fd, int flags, const struct itimerspec *new_value, struct itimerspec *_Nullable old_value);
+int timerfd_gettime(int fd, struct itimerspec *curr_value);
+
+int signalfd(int fd, const sigset_t *mask, int flags);
+int epoll_create1();
+int epoll_ctl(int epfd, int op, int fd, struct epoll_event *_Nullable event);
+int epoll_wait(int epfd, struct epoll_event events[.maxevents], int maxevents, int timeout);
+*/
+int efd = eventfd(2601, EFD_NONBLOCK);
+printf("efd %d cool lol\n", efd); 
+      printf("wtf %s\n\r", strerror(errno));
 
   long ret = 0, FS = 0, GS = 0;
   /*
@@ -75,6 +107,7 @@ int main(int argc, char *argv[]) {
   if (ftruncate(M, Msz) == -1) return 2;
   if (fcntl(M, F_ADD_SEALS, F_SEAL_GROW | F_SEAL_SHRINK) == -1) return 3;
   printf ("We did it %zu!\n", Msz);
+      printf("wtf %s\n\r", strerror(errno));
 
   for (;;) {
     int mfd = 0;
@@ -99,7 +132,24 @@ int main(int argc, char *argv[]) {
         cool += read(mfd, p, 6543114240 - cool);
         printf("cool %ld\n\r", cool);
         if (cool == 6543114240) {
-          printf("kbye %d\n\r", close(mfd));
+
+/*      
+
+		printf("lets try to mlock it: %d\n", mlockall(MLOCK_ONFAULT));
+
+      printf("wtf %s\n\r", strerror(errno));
+
+sleep(1);
+//printf("ok well close the big thing and try again\n");
+munmap(p, Msz);
+close(M);
+//sleep(1);
+printf("lets try to mlock it: %d %ld\n", mlock(p, Msz/4), Msz/4);
+      printf("wtf %s\n\r", strerror(errno));
+
+sleep(1);
+*/		
+			  printf("kbye %d\n\r", close(mfd));
           break;
         }
       }
