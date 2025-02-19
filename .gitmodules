@@ -40,3 +40,6 @@
 [submodule "lush/demo/demo2/slurp"]
 	path = lush/demo/demo2/slurp
 	url = https://github.com/emersion/slurp
+[submodule "demo/TrenchBroom"]
+	path = T
+	url = https://github.com/TrenchBroom/TrenchBroom
