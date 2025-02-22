@@ -43,3 +43,6 @@
 [submodule "demo/TrenchBroom"]
 	path = T
 	url = https://github.com/TrenchBroom/TrenchBroom
+[submodule "lush/demo/demo2/swaybg"]
+	path = lush/demo/demo2/swaybg
+	url = https://github.com/swaywm/swaybg
