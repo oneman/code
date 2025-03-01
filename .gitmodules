@@ -46,3 +46,6 @@
 [submodule "lush/demo/demo2/swaybg"]
 	path = lush/demo/demo2/swaybg
 	url = https://github.com/swaywm/swaybg
+[submodule "lush/bitstream"]
+	path = lush/bitstream
+	url = https://code.videolan.org/videolan/bitstream.git
